@@ -1,9 +1,26 @@
 <template>
   <nav>
-    <ul>
-      <li><Link href="/">Home</Link></li>
-      <li><Link href="/users">Users</Link></li>
-      <li><Link href="/settings">Settings</Link></li>
+    <ul class="list-disc">
+      <li>
+        <Link href="/" class="text-blue-600 hover:underline">Home </Link>
+      </li>
+      <li>
+        <Link href="/users" class="text-blue-600 hover:underline">Users </Link>
+      </li>
+      <li>
+        <Link href="/settings" class="text-blue-600 hover:underline"
+          >Settings
+        </Link>
+      </li>
+      <li>
+        <Link
+          href="/logout"
+          class="text-blue-600 hover:underline"
+          method="post"
+          as="button"
+          >logout
+        </Link>
+      </li>
     </ul>
   </nav>
 </template>

@@ -25,3 +25,6 @@ Route::get('/settings', function () {
     sleep(2);
     return inertia::render('Settings');
 });
+Route::post('/logout', function () {
+    dd('logout');
+});
