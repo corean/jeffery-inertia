@@ -1,6 +1,6 @@
 <template>
   <nav>
-    <ul class="list-disc">
+    <ul class="flex list-inside list-disc space-x-6">
       <li>
         <NavLink href="/" :active="$page.component === 'Home'">Home</NavLink>
       </li>
@@ -14,20 +14,10 @@
           >Settings</NavLink
         >
       </li>
-      <li>
-        <Link
-          href="/logout"
-          class="text-blue-600 hover:underline"
-          method="post"
-          as="button"
-          >logout
-        </Link>
-      </li>
     </ul>
   </nav>
 </template>
 
 <script setup>
-import { Link } from '@inertiajs/inertia-vue3'
 import NavLink from '@/Shared/NavLink.vue'
 </script>

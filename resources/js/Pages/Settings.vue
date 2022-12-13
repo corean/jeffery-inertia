@@ -1,10 +1,9 @@
 <template>
-  <h1 class="mb-4">Setting</h1>
-  <Nav />
+  <Layout>
+    <h1 class="text-2xl">Setting</h1>
+  </Layout>
 </template>
 
 <script setup>
-import Nav from '@/Shared/Nav.vue'
+import Layout from '@/Shared/Layout.vue'
 </script>
-
-<style scoped></style>
