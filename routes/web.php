@@ -18,9 +18,10 @@ Route::get('/', function () {
     return inertia::render('Home');
 });
 Route::get('/users', function () {
-//    sleep(2);
+    sleep(1);
     return inertia::render('Users');
 });
 Route::get('/settings', function () {
+    sleep(2);
     return inertia::render('Settings');
 });
