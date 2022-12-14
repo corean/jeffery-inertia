@@ -3,6 +3,7 @@
     <header class="align-items-center flex justify-between">
       <div class="flex items-center">
         <h1 class="text-lg font-bold">My App</h1>
+        <input type="text" value="11" />
         <p class="ml-2 text-sm">Welcome to, {{ username }}</p>
       </div>
       <Nav />
