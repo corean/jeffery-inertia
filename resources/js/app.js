@@ -6,12 +6,10 @@ import Layout from '@/Shared/Layout.vue'
 
 createInertiaApp({
   resolve: async (name) => {
-    const page = await resolvePageComponent(
-      `./Pages/${name}.vue`,
-      import.meta.glob('./Pages/**/*.vue')
-    )
-    if (!page.default.layout) {
-      page.default.layout ??= Layout
+    const page = (await import(`./Pages/${name}.vue`)).default
+
+    if (!page.layout) {
+      page.layout ??= Layout
     }
 
     return page
