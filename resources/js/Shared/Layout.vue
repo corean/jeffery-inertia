@@ -1,7 +1,10 @@
 <template>
   <div class="bg-gray-200 p-6">
     <header class="align-items-center flex justify-between">
-      <h1 class="text-lg font-bold">My App</h1>
+      <div class="flex items-center">
+        <h1 class="text-lg font-bold">My App</h1>
+        <p class="ml-2 text-sm">Welcome to, {{ username }}</p>
+      </div>
       <Nav />
     </header>
   </div>
@@ -12,11 +15,10 @@
   </section>
 </template>
 
-<script>
+<script setup>
 import Nav from '@/Shared/Nav.vue'
+import { computed } from 'vue'
+import { usePage } from '@inertiajs/inertia-vue3'
 
-export default {
-  name: 'Layout',
-  components: { Nav },
-}
+const username = computed(() => usePage().props.value.auth.user.username)
 </script>
