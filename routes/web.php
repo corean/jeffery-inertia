@@ -22,6 +22,7 @@ Route::get('/users', function () {
     //sleep(1);
     return inertia::render('Users', [
         'users' => User::all()->map(fn($user) => [
+            'id' => $user->id,
             'name' => $user->name,
         ]),
     ]);
