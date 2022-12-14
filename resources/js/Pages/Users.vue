@@ -6,7 +6,7 @@
       head-key="description"
     />
   </Head>
-  <h1 class="text-2xl">Users</h1>
+  <h1 class="mb-6 text-2xl">Users</h1>
   <!--
   <ul>
     <li v-for="user in users" :key="user.id" v-html="user.name" />
@@ -21,7 +21,7 @@
         >
           <table class="min-w-full divide-y divide-gray-200">
             <tbody class="divide-y divide-gray-200 bg-white">
-              <tr v-for="user in users " :key="user.id">
+              <tr v-for="user in users.data" :key="user.id">
                 <td class="whitespace-nowrap px-6 py-4">
                   <div class="flex items-center">
                     <div>
@@ -49,14 +49,16 @@
       </div>
     </div>
   </div>
+  <!-- paginator -->
+  <Pagination :links="users.links" class="mt-6" />
 </template>
 
 <script setup>
-import { Head, Link } from '@inertiajs/inertia-vue3'
+import Pagination from '@/Shared/Pagination.vue'
 
 defineProps({
   users: {
-    type: Array,
+    type: Object,
     default: [],
   },
 })

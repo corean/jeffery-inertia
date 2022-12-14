@@ -23,7 +23,6 @@
 import Nav from '@/Shared/Nav.vue'
 import { computed } from 'vue'
 import { usePage } from '@inertiajs/inertia-vue3'
-import { Head } from '@inertiajs/inertia-vue3'
 
 const username = computed(() => usePage().props.value.auth.user.username)
 

@@ -20,11 +20,9 @@ Route::get('/', function () {
 });
 Route::get('/users', function () {
     //sleep(1);
+    //return User::paginate(10);
     return inertia::render('Users', [
-        'users' => User::all()->map(fn($user) => [
-            'id' => $user->id,
-            'name' => $user->name,
-        ]),
+        'users' => User::paginate(10, ['id', 'name']),
     ]);
 });
 Route::get('/settings', function () {
