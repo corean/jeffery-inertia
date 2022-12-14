@@ -1,4 +1,8 @@
 <template>
+  <Head>
+    <title>{{ title }}</title>
+  </Head>
+
   <div class="bg-gray-200 p-6">
     <header class="align-items-center flex justify-between">
       <div class="flex items-center">
@@ -19,6 +23,12 @@
 import Nav from '@/Shared/Nav.vue'
 import { computed } from 'vue'
 import { usePage } from '@inertiajs/inertia-vue3'
+import { Head } from '@inertiajs/inertia-vue3'
 
 const username = computed(() => usePage().props.value.auth.user.username)
+
+const title = computed(() => {
+  return usePage().component.value
+  // console.log('component', component)
+})
 </script>

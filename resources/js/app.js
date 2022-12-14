@@ -3,22 +3,22 @@ import { createInertiaApp } from '@inertiajs/inertia-vue3'
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers'
 import { InertiaProgress } from '@inertiajs/progress'
 import Layout from '@/Shared/Layout.vue'
+import { Head } from '@inertiajs/inertia-vue3'
 
 createInertiaApp({
   resolve: async (name) => {
     const page = (await import(`./Pages/${name}.vue`)).default
-
-    if (!page.layout) {
-      page.layout ??= Layout
-    }
-
+    page.layout ??= Layout
     return page
   },
   setup({ el, App, props, plugin }) {
     createApp({ render: () => h(App, props) })
       .use(plugin)
+      .component('Head', Head)
       .mount(el)
   },
+
+  title: (title) => `${title} - My App`,
 })
 
 InertiaProgress.init()
